@@ -7,9 +7,6 @@ import com.nytimes.utils.Utils
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
-/**
- *
- */
 abstract class BaseActivity<V: ViewModel> : DaggerAppCompatActivity(){
 
     private lateinit var  viewModel: V
