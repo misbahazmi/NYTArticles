@@ -37,9 +37,10 @@ We can other plugins also to have code converage report for tests.
 
 Screenshots of the Build:
 
-![image](https://user-images.githubusercontent.com/8206573/179419983-3798e5aa-7200-43c9-987b-0f0d26f2bc12.png) 
+![image](https://user-images.githubusercontent.com/8206573/179420096-63d9ef04-a843-46d6-be10-1324a98f5aad.png)
 
-![image](https://user-images.githubusercontent.com/8206573/179420005-eeea0011-ec77-422b-9d47-90c1777a8a6c.png)
+![image](https://user-images.githubusercontent.com/8206573/179420119-b93bbaf4-5f54-4064-9077-2d3ed0b3f27d.png)
+
 
 
 
