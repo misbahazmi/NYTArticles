@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.NYTArticles" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/light_blue_900</item>
+    </style>
+
+    <style name="Theme.NYTArticles" parent="Base.Theme.NYTArticles" />
+
+    <style name="Theme.NYTArticles.Fullscreen" parent="Theme.NYTArticles">
+        <item name="android:actionBarStyle">@style/Widget.Theme.NYTArticles.ActionBar.Fullscreen</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="Theme.NYTArticles.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.NYTArticles.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.NYTArticles.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

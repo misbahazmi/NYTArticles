@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.nytimes.core.data.model.ResultsItem" />
+
+        <variable
+            name="itemClickListener"
+            type="com.nytimes.interfaces.OnArticleClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutItem"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->itemClickListener.onArticleClick(data)}"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/imgCover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxHeight="60dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_image_default"
+            app:cover="@{data.media.size()==0 ? null : data.media.get(0).mediaMetadata.size() ==0 ? null : data.media.get(0).mediaMetadata.get(0).url}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{data.title}"
+            android:textColor="@color/color_text_1"
+            android:layout_marginEnd="8dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginStart="16dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toStartOf="@+id/imgNext"
+            app:layout_constraintStart_toEndOf="@+id/imgCover"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Beer Name" />
+
+        <TextView
+            android:id="@+id/txtArticleBy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:layout_marginTop="16dp"
+            android:text="@{data.byline}"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="2"
+            app:layout_constraintEnd_toStartOf="@+id/imgNext"
+            app:layout_constraintStart_toEndOf="@+id/imgCover"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+            tools:text="Beer Name" />
+
+        <TextView
+            android:id="@+id/txtArticleDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:text="@{data.publishedDate}"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:layout_marginEnd="8dp"
+            android:textStyle="normal"
+            app:drawableStartCompat="@drawable/ic_date"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imgNext"
+            app:layout_constraintTop_toBottomOf="@+id/txtArticleBy"
+            tools:text="Beer Name" />
+
+        <ImageView
+            android:id="@+id/imgNext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_next"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

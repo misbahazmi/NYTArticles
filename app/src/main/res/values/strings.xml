@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">NYTArticles</string>
+    <string name="dlg_title_alert" translatable="false">Alert</string>
+    <string name="dlg_btn_ok" translatable="false">OK</string>
+    <string name="title_discover_beers">NY Times Most Popular</string>
+    <string name="title_activity_weight">WeightActivity</string>
+    <string name="lbl_info">Information</string>
+    <string name="lbl_volume">Volume</string>
+    <string name="lbl_boil_volume">Boil Volume</string>
+    <string name="lbl_abv">ABV</string>
+    <string name="lbl_ibu">IBU</string>
+    <string name="lbl_fg">FG</string>
+    <string name="lbl_og">OG</string>
+    <string name="lbl_srm">SRM</string>
+    <string name="lbl_ph">PH</string>
+    <string name="lbl_ingredients">Ingredients</string>
+    <string name="lbl_malt">Malt</string>
+    <string name="lbl_hops">Hops</string>
+    <string name="lbl_method">Method</string>
+    <string name="lbl_mash_temp">Mash Temp</string>
+    <string name="lbl_fermentation">Fermentation</string>
+    <string name="lbl_twist">Twist</string>
+    <string name="lbl_brewers_tips">Brewer\'s Tips</string>
+    <string name="lbl_contributed_by">- Contributed By</string>
+    <string name="btn_done">Done</string>
+</resources>

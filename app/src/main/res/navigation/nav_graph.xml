@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ArticlesFragment">
+
+    <fragment
+        android:id="@+id/ArticlesFragment"
+        android:name="com.nytimes.ui.articles.ArticlesFragment"
+        android:label="@string/title_discover_beers"
+        tools:layout="@layout/fragment_articles">
+
+        <action
+            android:id="@+id/action_ArticlesFragment_to_ArticleDetailFragment"
+            app:destination="@id/ArticleDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ArticleDetailFragment"
+        android:name="com.nytimes.ui.articleDetail.ArticleDetailFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_article_detail">
+
+        <argument
+            android:name="articleModel"
+            app:argType="com.nytimes.core.data.model.ResultsItem" />
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>
