@@ -1,5 +1,9 @@
 # NYTArticles
-Technology Assessment for Android Developer Role
+Technology Assessment for:
+- OOPS
+- MVVM
+- DI
+- Unit Test
 
 Description
 Build a simple app to hit the NY Times Most Popular Articles API and show a list of articles,
