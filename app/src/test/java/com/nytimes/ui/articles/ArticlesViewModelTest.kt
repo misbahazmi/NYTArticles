@@ -2,6 +2,10 @@ package com.nytimes.ui.articles
 
 import android.content.Context
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.TestCoroutineDispatcher
+import kotlinx.coroutines.test.TestCoroutineScope
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.withContext
 import org.junit.Assert
@@ -17,6 +21,7 @@ internal class ArticlesViewModelTest {
 
     @Mock
     private lateinit var context: Context
+
 
     @Mock
     private lateinit var repository: ArticlesRepository
@@ -56,13 +61,11 @@ internal class ArticlesViewModelTest {
     fun getArticlesObservable() {
     }
 
+    @ExperimentalCoroutinesApi
     @Test
-    fun getAllArticlesList() {
-//        = runTest{
-//            withContext(Dispatchers.Default) {
-//                Assert.assertNull(subject.getAllArticlesList())
-//            }
-//            Mockito.verify(subject).getAllArticlesList()
+    fun getAllArticlesList() = runTest {
+            withContext(Dispatchers.Default) {
+                subject.getAllArticlesList()
+            }
     }
-
 }
