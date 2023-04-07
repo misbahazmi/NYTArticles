@@ -105,6 +105,17 @@ class ArticlesFragment : BaseFragment<ArticlesViewModel>(), OnArticleClickListen
                     binding.recyclerArticles.visible()
                     binding.progressbar.gone()
                 }
+                else->{
+                    result.message?.let {
+                        Snackbar.make(
+                            binding.recyclerArticles,
+                            it,
+                            Snackbar.LENGTH_LONG
+                        ).show()
+                    }
+                    binding.recyclerArticles.visible()
+                    binding.progressbar.gone()
+                }
             }
         }
     }

@@ -23,12 +23,10 @@ import javax.inject.Singleton
 )
 
 interface MainComponent : AndroidInjector<NYTApplication>{
-
     @Component.Builder
     interface Builder{
         @BindsInstance
         fun application(application: NYTApplication): Builder
         fun build(): MainComponent
     }
-
 }

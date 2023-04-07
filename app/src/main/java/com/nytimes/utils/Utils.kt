@@ -28,31 +28,29 @@ open class Utils @Inject constructor(val context: Context) {
      fun isNetworkAvailable(): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        if (connectivityManager != null) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                val capabilities =
-                    connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
-                if (capabilities != null) {
-                    if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
-                        return true
-                    } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
-                        return true
-                    } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
-                        return true
-                    }
-                }
-            } else {
-                try {
-                    val activeNetworkInfo = connectivityManager.activeNetworkInfo
-                    if (activeNetworkInfo != null && activeNetworkInfo.isConnected) {
-                        AppLog.debugI("update_status", "Network is available : true")
-                        return true
-                    }
-                } catch (e: java.lang.Exception) {
-                    AppLog.debugI("update_status", "${e.message}")
-                }
-            }
-        }
+         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+             val capabilities =
+                 connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+             if (capabilities != null) {
+                 if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
+                     return true
+                 } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+                     return true
+                 } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
+                     return true
+                 }
+             }
+         } else {
+             try {
+                 val activeNetworkInfo = connectivityManager.activeNetworkInfo
+                 if (activeNetworkInfo != null && activeNetworkInfo.isConnected) {
+                     AppLog.debugI("update_status", "Network is available : true")
+                     return true
+                 }
+             } catch (e: java.lang.Exception) {
+                 AppLog.debugI("update_status", "${e.message}")
+             }
+         }
         AppLog.debugI("update_status", "Network is available : FALSE ")
         return false
     }

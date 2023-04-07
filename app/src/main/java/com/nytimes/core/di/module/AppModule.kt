@@ -46,20 +46,17 @@ class AppModule {
     @Provides
     @Singleton
     @Named("DEFAULT")
-    fun provideDefaultDispatchers(): CoroutineDispatcher =
-        Dispatchers.Default
+    fun provideDefaultDispatchers(): CoroutineDispatcher = Dispatchers.Default
 
     @Provides
     @Singleton
     @Named("IO")
-    fun provideBackgroundDispatchers(): CoroutineDispatcher =
-        Dispatchers.IO
+    fun provideBackgroundDispatchers(): CoroutineDispatcher = Dispatchers.IO
 
     @Provides
     @Singleton
     @Named("MAIN")
-    fun provideMainDispatchers(): CoroutineDispatcher =
-        Dispatchers.Main
+    fun provideMainDispatchers(): CoroutineDispatcher = Dispatchers.Main
 
     @Provides
     @Singleton

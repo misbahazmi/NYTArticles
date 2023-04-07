@@ -70,9 +70,5 @@ class NetworkModule {
             request = request.newBuilder().headers(headers).build()
             chain.proceed(request)
         }
-
     }
-
-
-
 }
